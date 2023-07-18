@@ -10,7 +10,6 @@ import org.springframework.cloud.openfeign.FeignAutoConfiguration;
 @SpringBootApplication
 @EnableFeignClients
 @ImportAutoConfiguration({FeignAutoConfiguration.class})
-@EnableDiscoveryClient
 public class UserServiceApplication {
 
 	public static void main(String[] args) {

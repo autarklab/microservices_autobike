@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-@FeignClient(name = "car-service",url = "http://car-service/api/car")
+@FeignClient(name = "car-service", path = "/api/car")
 public interface CarFeignClient {
 
     @PostMapping()
-    Car save(@RequestBody Car car);
+    Car save(Car car);
 
     @GetMapping("/byUser/{userId}")
     List<Car> getCars(@PathVariable(name = "userId") int userId);

@@ -11,8 +11,8 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.H2Dialect
 
-microservice-car:
-  url: http://car-service/api/car
-
-microservice-bike:
-  url: http://bike-service/api/bike
+#microservice-car:
+#  url: http://car-service/api/car
+#
+#microservice-bike:
+#  url: http://bike-service/api/bike

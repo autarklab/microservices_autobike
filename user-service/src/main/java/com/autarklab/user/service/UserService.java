@@ -68,7 +68,7 @@ public class UserService {
         return bikeFeignClient.save(bike);
     }
 
-    public Map<String, Object> getAllvehiclesByUser(int id) {
+    public Map<String, Object> getAllVehiclesByUser(int id) {
 
         Map<String,Object> result = new HashMap<>();
         User user = userRepository.findById(id).orElse(null);

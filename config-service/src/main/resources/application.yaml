@@ -5,7 +5,7 @@ spring:
     config:
       server:
         git:
-          default-label: 05apiGateway
+          default-label: 06circuitBreaker
           uri: https://github.com/autarklab/microservices_autobike
           search-paths: config-data
   application:

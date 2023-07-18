@@ -1,0 +1,12 @@
+server:
+  port: 8081
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          default-label: 02configServer
+          uri: https://github.com/autarklab/microservices_autobike
+          search-paths: config-data
+  application:
+    name: config-service

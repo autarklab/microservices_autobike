@@ -12,7 +12,7 @@ spring:
         dialect: org.hibernate.dialect.H2Dialect
 
 microservice-car:
-  url: http://localhost:8002/api/car
+  url: http://car-service/api/car
 
 microservice-bike:
-  url: http://localhost:8003/api/bike
+  url: http://bike-service/api/bike

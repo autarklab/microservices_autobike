@@ -23,6 +23,8 @@ public class JwtProvider {
     public String create(String username) {
         Date now = new Date();
         Date exp = new Date(now.getTime() + 3600000);
+        System.out.println("==== PASO 3 LOGIN =====");
+        System.out.println("====== ENTRO ACA =====");
         return JWT.create()
                 .withSubject(username)
                 .withIssuer("autarklab")

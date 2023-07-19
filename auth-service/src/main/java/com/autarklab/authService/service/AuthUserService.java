@@ -25,7 +25,7 @@ public class AuthUserService {
                            JwtProvider jwtProvider) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
-        this.jwtProvider = jwtProvider
+        this.jwtProvider = jwtProvider;
     }
 
     public AuthUser save(AuthUserDTO dto) {
@@ -37,8 +37,10 @@ public class AuthUserService {
         String password = passwordEncoder.encode(dto.getPassword());
         AuthUser authUser = AuthUser.builder()
                 .userName(dto.getUserName())
-                .password(dto.getPassword())
+                .password(password)
                 .build();
+        System.out.println("==== PASO 2 =====");
+        System.out.println(authUser);
         return this.userRepository.save(authUser);
     }
 

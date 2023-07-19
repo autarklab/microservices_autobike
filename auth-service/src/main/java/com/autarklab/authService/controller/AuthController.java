@@ -52,7 +52,13 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<AuthUser> register(@RequestBody AuthUserDTO dto){
+        System.out.println("==== PASO 1 =====");
+        System.out.println(dto);
         AuthUser authUser = authUserService.save(dto);
+
+        System.out.println("==== PASO 3 =====");
+        System.out.println(authUser);
+
         if (authUser == null) {
             return ResponseEntity.badRequest().build();
         }

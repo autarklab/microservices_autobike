@@ -30,7 +30,7 @@ public class AuthUserService {
 
     public AuthUser save(AuthUserDTO dto) {
         Optional<AuthUser> user = userRepository.findByUserName(dto.getUserName());
-        if(user.isEmpty()) {
+        if(user.isPresent()) {
             return null;
         }
 

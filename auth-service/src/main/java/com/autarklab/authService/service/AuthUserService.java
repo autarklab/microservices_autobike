@@ -39,8 +39,6 @@ public class AuthUserService {
                 .userName(dto.getUserName())
                 .password(password)
                 .build();
-        System.out.println("==== PASO 2 =====");
-        System.out.println(authUser);
         return this.userRepository.save(authUser);
     }
 

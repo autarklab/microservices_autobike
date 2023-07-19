@@ -35,14 +35,9 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<Void> login(@RequestBody AuthUserDTO dto) {
-        System.out.println("==== PASO 1 LOGIN =====");
-        System.out.println(dto);
         UsernamePasswordAuthenticationToken login = new UsernamePasswordAuthenticationToken(
                 dto.getUserName(), dto.getPassword()
         );
-
-        System.out.println("==== PASO 2 LOGIN =====");
-        System.out.println(login);
 
         Authentication authentication = this.manager.authenticate(login);
 
@@ -52,20 +47,12 @@ public class AuthController {
 
         String jwt = jwtProvider.create(dto.getUserName());
 
-        System.out.println("==== PASO 4 LOGIN =====");
-        System.out.println(jwt);
-
         return ResponseEntity.ok().header(HttpHeaders.AUTHORIZATION, jwt).build();
     }
 
     @PostMapping("/register")
     public ResponseEntity<AuthUser> register(@RequestBody AuthUserDTO dto){
-        System.out.println("==== PASO 1 =====");
-        System.out.println(dto);
         AuthUser authUser = authUserService.save(dto);
-
-        System.out.println("==== PASO 3 =====");
-        System.out.println(authUser);
 
         if (authUser == null) {
             return ResponseEntity.badRequest().build();
